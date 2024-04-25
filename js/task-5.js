@@ -11,5 +11,5 @@ btnChange.addEventListener("click", (color) => {
   color = getRandomHexColor();
 
   bgColor.style.background = color;
-  span.style.color = color;
+  span.textContent = color;
 });

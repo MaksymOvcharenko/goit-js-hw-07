@@ -126,3 +126,44 @@ body {
 .widget .change-color:hover {
   background-color: #6c8cff;
 }
+#controls {
+  margin: auto;
+  display: flex;
+  gap: 16px;
+  padding: 32px;
+  width: 486px;
+  height: 134px;
+  justify-content: center;
+}
+#controls input {
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #808080;
+}
+#controls button {
+  width: 120px;
+  height: 40px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #4e75ff;
+}
+#controls button:last-child {
+  background-color: #ff4e4e;
+}
+#boxes {
+  margin: auto;
+  display: flex;
+  width: 496px;
+  height: 134px;
+  padding: 32px;
+  gap: 44px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
