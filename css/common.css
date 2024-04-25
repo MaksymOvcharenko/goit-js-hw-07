@@ -154,8 +154,16 @@ body {
   color: #ffffff;
   background-color: #4e75ff;
 }
+#controls button:hover {
+  background: #6c8cff;
+}
+
 #controls button:last-child {
   background-color: #ff4e4e;
+}
+
+#controls button:last-child:hover {
+  background: #ff7070;
 }
 #boxes {
   margin: auto;
@@ -164,6 +172,6 @@ body {
   height: 134px;
   padding: 32px;
   gap: 44px;
-  justify-content: center;
+  /* justify-content: center; */
   flex-wrap: wrap;
 }

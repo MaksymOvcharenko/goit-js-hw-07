@@ -1,7 +1,7 @@
-const quantityDiv = document.querySelector("#controls input");
+const quantityBoxes = document.querySelector("#controls input");
 const btnCreate = document.querySelector("button[data-create]");
 const btnDestroy = document.querySelector("button[data-destroy]");
-const divPlace = document.querySelector("#boxes");
+const boxPlace = document.querySelector("#boxes");
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
@@ -9,32 +9,33 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-let valueNew = btnCreate.addEventListener("click", () => {
-  return (valueNew = quantityDiv.value);
-});
-console.log(valueNew);
 btnCreate.addEventListener("click", () => {
-  const divArray = [];
-  let ammount = quantityDiv.value;
+  let ammount = quantityBoxes.value;
+  createBoxes(ammount);
+});
+
+btnDestroy.addEventListener("click", () => {
+  destroyBoxes();
+});
+function createBoxes(ammount) {
+  const boxArray = [];
   if (!(ammount > 100)) {
     for (let i = 0; i < ammount; i++) {
-      divArray.push({
-        colors: getRandomHexColor(),
+      boxArray.push({
         size: 30 + i * 10,
-        margin: 5,
       });
     }
-    divPlace.innerHTML = divArray
+    boxPlace.innerHTML = boxArray
       .map(
         (item) =>
-          `<div class= "color_boxes" style="background-color: ${getRandomHexColor()}; width: ${
+          `<div style="background-color: ${getRandomHexColor()}; width: ${
             item.size
           }px; height: ${item.size}px"></div>`
       )
       .join("");
   }
-  quantityDiv.value = "";
-});
-btnDestroy.addEventListener("click", (value) => {
-  divPlace.innerHTML = "";
-});
+  quantityBoxes.value = "";
+}
+function destroyBoxes() {
+  boxPlace.innerHTML = "";
+}
