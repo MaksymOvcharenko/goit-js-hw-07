@@ -14,12 +14,11 @@ btnCreate.addEventListener("click", () => {
   createBoxes(ammount);
 });
 
-btnDestroy.addEventListener("click", () => {
-  destroyBoxes();
-});
+btnDestroy.addEventListener("click", destroyBoxes);
 function createBoxes(ammount) {
   boxPlace.innerHTML = "";
-  if (!(0 < ammount > 100)) {
+  if (ammount >= 1 && ammount <= 100) {
+    console.log(ammount);
     for (let i = 0; i < ammount; i++) {
       boxPlace.insertAdjacentHTML(
         "beforeend",
