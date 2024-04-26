@@ -18,21 +18,16 @@ btnDestroy.addEventListener("click", () => {
   destroyBoxes();
 });
 function createBoxes(ammount) {
-  const boxArray = [];
-  if (!(ammount > 100)) {
+  boxPlace.innerHTML = "";
+  if (!(0 < ammount > 100)) {
     for (let i = 0; i < ammount; i++) {
-      boxArray.push({
-        size: 30 + i * 10,
-      });
+      boxPlace.insertAdjacentHTML(
+        "beforeend",
+        `<div style="background-color: ${getRandomHexColor()}; width: ${
+          30 + i * 10
+        }px; height: ${30 + i * 10}px"></div>`
+      );
     }
-    boxPlace.innerHTML = boxArray
-      .map(
-        (item) =>
-          `<div style="background-color: ${getRandomHexColor()}; width: ${
-            item.size
-          }px; height: ${item.size}px"></div>`
-      )
-      .join("");
   }
   quantityBoxes.value = "";
 }
